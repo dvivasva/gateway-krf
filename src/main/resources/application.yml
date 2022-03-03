@@ -1,0 +1,5 @@
+spring:
+  appication:
+    name: gateway-krf
+server:
+  port: 8089
