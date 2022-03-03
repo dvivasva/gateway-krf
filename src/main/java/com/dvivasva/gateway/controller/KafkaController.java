@@ -18,8 +18,9 @@ public class KafkaController {
     private final Sender sender;
 
     @PostMapping("/request")
-    public ResponseEntity<String> createPayment(@RequestBody RequestBuyBootCoin requestBuyBootCoin){
-        var value= this.sender.sendRequestBuyBootCoin(requestBuyBootCoin);
+    public ResponseEntity<String> requestBuy(@RequestBody RequestBuyBootCoin requestBuyBootCoin){
+        this.sender.sendRequestBuyBootCoin(requestBuyBootCoin);
+        var value= "Sending BootCoin purchase request ->";
         return new ResponseEntity<>(value, HttpStatus.OK);
     }
 
